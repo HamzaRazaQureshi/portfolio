@@ -1,10 +1,18 @@
 import './App.css';
+import styled,{ ThemeProvider } from "styled-components";
+import { darkTheme } from './utilities/themes';
+
+const Body = styled.div`
+  background-color: ${({ theme }) => theme.bg};
+  width: 100%;
+  overflow-x: hidden;
+`
 
 function App() {
   return (
-    <div className="App">
-      Protfolio
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <Body></Body>
+    </ThemeProvider>
   );
 }
 
